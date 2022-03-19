@@ -4,10 +4,9 @@ const router = express.Router();
 
 router.get('/all', users.getUsers);
 router.post('/', users.login);
-router.put('/:uuid', users.updateUser);
+router.put('/:uuid', users.updateUser, users.updateAccount);
 // router.put('/:uuid/pin', users.setPin);
-router.get('/:uuid', users.getUserByUUID);
-
-
+// for admin
+router.delete('/:uuid', users.deleteUser);
 
 module.exports = router;
