@@ -1,4 +1,4 @@
-const { Sequelize,QueryTypes, DataTypes, Model } = require('sequelize');
+const { Sequelize, QueryTypes, DataTypes, Model } = require('sequelize');
 
 const { mini_bank } = require('../config/db');
 
@@ -7,7 +7,7 @@ class Users extends Model {
     const query = `
       SELECT
       *
-      FROM transaction;
+      FROM users;
     `;
     return this.sequelize.query(query, {
       // replacements: { loanId },
@@ -37,10 +37,10 @@ Users.init({
     type: DataTypes.STRING
   },
   dob: {
-      type: DataTypes.STRING
+    type: DataTypes.STRING
   },
   mobileNumber: {
-      type: DataTypes.STRING
+    type: DataTypes.STRING
   },
   createdAt: {
     type: DataTypes.TIME,
